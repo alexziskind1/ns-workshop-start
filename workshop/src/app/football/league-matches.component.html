@@ -1,0 +1,26 @@
+<ActionBar [title]="leagueName" class="action-bar">
+</ActionBar>
+
+<DockLayout stretchLastChild="true">
+  <ListView [items]="matches" class="list-group">
+    <ng-template let-match="item">
+      <!-- match template - to be replaced with my-match -->
+      <StackLayout class="list-group-item">
+        <GridLayout rows="auto" columns="*, auto, *">
+          <Label col="0" [text]="match.strHomeTeam" class="h4 text-right">
+          </Label>
+
+          <StackLayout col="1" horizontalAlignment="center" class="p-l-10 p-r-10 h3">
+            <StackLayout orientation="horizontal">
+              <Label [text]="match.intHomeScore" class="score m-r-5" [class.in-play]="match.status === 'IN_PLAY'"></Label>
+              <Label [text]="match.intAwayScore" class="score" [class.in-play]="match.status === 'IN_PLAY'"></Label>
+            </StackLayout>
+          </StackLayout>
+
+          <Label col="2" [text]="match.strAwayTeam" class="h4">
+          </Label>
+        </GridLayout>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</DockLayout>

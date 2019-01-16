@@ -1,0 +1,28 @@
+<ActionBar title="Football Leagues" icon="" class="action-bar">
+</ActionBar>
+
+<TabView selectedColor="#FF0000" class="m-l-5 m-r-5">
+  <StackLayout *tabItem="{title: 'Premier League'}">
+    <Button text="View Matches" [nsRouterLink]="['/football/matches/', PremierLeagueId, 'Premier League']" class="btn btn-primary">
+    </Button>
+    <my-league-table [leagueId]="PremierLeagueId" (teamSelected)="onTeamTap($event)"></my-league-table>
+  </StackLayout>
+
+  <StackLayout *tabItem="{title: 'Ligue 1'}">
+    <Button text="View Matches" [nsRouterLink]="['/football/matches/', Ligue1Id, 'Ligue 1']" class="btn btn-primary">
+    </Button>
+    <my-league-table [leagueId]="Ligue1Id" (teamSelected)="onTeamTap($event)"></my-league-table>
+  </StackLayout>
+
+  <StackLayout *tabItem="{title: 'Bundesliga'}">
+    <Button text="View Matches" [nsRouterLink]="['/football/matches/', BundesligaId, 'Bundesliga']" class="btn btn-primary">
+    </Button>
+    <my-league-table [leagueId]="BundesligaId" (teamSelected)="onTeamTap($event)"></my-league-table>
+  </StackLayout>
+
+  <StackLayout *tabItem="{title: 'Serie A'}">
+    <Button text="View Matches" [nsRouterLink]="['/football/matches/', SerieAId, 'Serie A']" class="btn btn-primary">
+    </Button>
+    <my-league-table [leagueId]="SerieAId" (teamSelected)="onTeamTap($event)"></my-league-table>
+  </StackLayout>
+</TabView>

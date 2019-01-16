@@ -1,0 +1,13 @@
+<ActionBar [title]="team?.name" class="action-bar">
+</ActionBar>
+
+<DockLayout stretchLastChild="true">
+  <Label dock="top" text="Matches" class="h2 text-center action-bar"></Label>
+  <ListView [items]="matches" class="list-group">
+    <ng-template let-item="item" let-odd="odd" let-even="even">
+      <StackLayout class="list-group-item">
+        <my-match [match]="item" (teamTap)="teamSelected($event)"></my-match>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</DockLayout>

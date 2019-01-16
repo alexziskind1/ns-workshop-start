@@ -1,0 +1,13 @@
+<GridLayout rows="auto" columns="*, auto, *" class="list-group-item">
+  <Label col="0" text="homeTeamName" class="h4 text-right"></Label>
+  <StackLayout col="1" horizontalAlignment="center" class="m-x-10 h3">
+    <!-- Update text to bind to match.result. goalsHomeTeam/goalsAwayTeam see models/match.model.ts for the data structure -->
+    <StackLayout orientation="horizontal">
+      <Label [text]="0" class="score m-r-5"></Label>
+      <Label [text]="0" class="score"></Label>
+    </StackLayout>
+
+  </StackLayout>
+
+  <Label col="2" text="awayTeamName" class="h4 text-left"></Label>
+</GridLayout>
