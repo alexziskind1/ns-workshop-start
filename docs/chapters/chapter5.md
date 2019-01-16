@@ -480,7 +480,7 @@ Now if you reload the app and go to `View Matches` you should get something like
 
 Head to `match.component.ts`.
 
-Currently the `MatchComponent` has a `match` attribute, however in this state there is no way to update the value of the match from the `LeagueMatches` Component.
+Currently the `MatchComponent` has a `match` attribute, however in this state there is no way to update the value of the match from the `LeagueMatchesComponent`.
 
 What we need is to turn the `match` into an `@Input` type attribute.
 
@@ -509,7 +509,7 @@ export class MatchComponent {
 
 Head to `match.component.html`.
 
-Update all the `Labels` so that they display the data from the match attribute. Make sure you take care of `homeTeamName`, `awayTeamName`, `result.goalsHomeTeam`, `result.goalsAwayTeam`, and `date`.
+Update all the `Labels` so that they display the data from the match attribute. Make sure you take care of `strHomeTeam`, `strAwayTeam`, `intHomeScore`, `intAwayScore`, and `dateEvent`.
 
 <div class="solution-start"></div>
 
@@ -608,7 +608,7 @@ onTeamSelect(event) {
 }
 ```
 
-Obviously there must be something that actually triggers `onTeamSelect`. In this case this is done by the `<ListView>`
+There must be something that actually triggers `onTeamSelect`. In this case this is done by the `<ListView>`
 
 ``` XML
 <ListView [items]="table?.standing" class="list-group" (itemTap)="onTeamSelect($event)">
@@ -753,4 +753,4 @@ Now you can use the `ColorPickerComponent` like this:
 Can you implement the missing pieces of the `PlayerComponent`? 
 Your task is to add an `@Input` to capture the player object, then update `TeamComponent`, so that it displayes a list of players instead of matches.
 
-Each `PlayerComponent` should display player details like: name, position, jerseyNumber and nationality. 
+Each `PlayerComponent` should display player details like: name, position, and nationality. 
